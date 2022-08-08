@@ -1,0 +1,14 @@
+{
+  "name": "ripple-store-api",
+  "version": "1.0.0",
+  "description": "Ripple Store API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "ripple-dev",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
