@@ -3,6 +3,7 @@ import cors from 'cors';
 import  dotenv from "dotenv";
 import bodyParser from 'body-parser';
 import { initializeConnectionTodb } from './db';
+import { errorHandler, routeNotFoundHandler } from "./middlewares";
 
 dotenv.config();
 
@@ -16,6 +17,16 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+/**
+ * 404 Route Handler
+ */
+ app.use(routeNotFoundHandler);
+
+/**
+* Error Handler
+*/
+app.use(errorHandler);
+
 app.listen(process.env.PORT, () => {
-  console.log(`Example app listening on port ${process.env.PORT}`)
+  console.log(`Server Started`)
 })
